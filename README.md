@@ -39,6 +39,7 @@ on ce.emp_no=title_ref.emp_no
 
 ## Result 
 
+![Annotation 2019-11-17 002512](https://user-images.githubusercontent.com/55926650/69005075-6a21ab80-08d1-11ea-91d0-d7c6e6b8835c.png)
 
 
 **Looking for Mentor**
@@ -57,6 +58,7 @@ where dept.to_date='9999-01-01'
 --to select the people who can mentor 
 and emp.birth_date between '1965-01-01' and '1965-12-31'
 
+![Capture](https://user-images.githubusercontent.com/55926650/69005076-6a21ab80-08d1-11ea-81a7-c4b606238e62.PNG)
 
 
 
