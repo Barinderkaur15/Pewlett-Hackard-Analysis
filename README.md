@@ -20,4 +20,43 @@
 ### ERD Diagram  showing the relationship betwwen the primary Tables in this Analysis ####
 
 
+![EmployeeDB](https://user-images.githubusercontent.com/55926650/69004983-14003880-08d0-11ea-9f0d-ffd8293803ca.png)
+
+
+
+### Code Snippets with resules ##
+
+**Unique employees with recent title who are retirirng** 
+
+--- creating the new table with unique and recent title 
+select ce.* ,title_ref.title 
+INTO Ret_current_title 
+from current_emp as ce
+inner join 
+(select emp_no,title from (select Emp_no,title,to_date,row_number() over (Partition by (emp_no) order by to_date Desc) as row_num
+from titles ) x where row_num=1 ) as  title_ref
+on ce.emp_no=title_ref.emp_no
+
+## Result 
+
+
+
+**Looking for Mentor**
+
+select emp.emp_no, emp.first_name,emp.last_name,title.title ,dept.from_date,dept.to_date
+--adding into new table
+into new_mentor
+from 
+employees as emp 
+inner join dept_emp as dept 
+on emp.emp_no=dept.emp_no
+inner join titles as title 
+on emp.emp_no=title.emp_no
+--to select only current employees 
+where dept.to_date='9999-01-01'
+--to select the people who can mentor 
+and emp.birth_date between '1965-01-01' and '1965-12-31'
+
+
+
 
