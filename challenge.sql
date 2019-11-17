@@ -88,7 +88,7 @@ where dept.to_date='9999-01-01'
 --to select the people who can mentor 
 and emp.birth_date between '1965-01-01' and '1965-12-31'
 
---------counting number of mentor -------
+--------counting number of mentor ---------
 select count(*) from (select emp.emp_no, emp.first_name,emp.last_name,title.title ,dept.from_date,dept.to_date
 from 
 employees as emp 
